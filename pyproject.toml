@@ -1,0 +1,17 @@
+[project]
+name = "demoqa_shield"
+version = "0.1.0"
+description = "A short description of my project"
+requires-python = ">=3.12"
+dependencies = [
+    "playwright",
+    "pytest",
+    "requests",
+    "responses",
+    "invoke",
+    "pydantic",
+]
+
+
+[project.optional-dependencies]
+dev = ["ruff"]
