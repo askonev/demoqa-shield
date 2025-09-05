@@ -15,8 +15,12 @@ uv pip install -r requirements.txt
 
 ```bash
 # For requirements.txt
-uv venv
+uv venv .venv
 uv pip install -r requirements.txt
+```
+
+```bash
+invoke --list
 ```
 
 ### playwright
@@ -26,3 +30,6 @@ playwright install
 ```
 
 ## Author
+
+Maksim.Sorokin
+<askonev007@gmail.com>

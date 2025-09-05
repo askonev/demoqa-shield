@@ -15,3 +15,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["ruff"]
+
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
