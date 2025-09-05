@@ -5,12 +5,13 @@
             "name": "pytest",
             "type": "debugpy",
             "request": "launch",
-            "module": "pytest", // Запускаем pytest как модуль
+            "python": "${workspaceFolder}/.venv/bin/python", // <-- Add this line
+            "module": "pytest",
             "args": [
-                "${file}" // Передаем текущий файл как аргумент
+                "${file}"
             ],
             "console": "integratedTerminal",
-            "justMyCode": false // Позволяет отладчику заходить в код сторонних библиотек
+            "justMyCode": false
         }
     ]
 }
