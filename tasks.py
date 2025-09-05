@@ -18,4 +18,3 @@ def pw_install(c):
     print("Installing required browsers for Playwright...")
     c.run("playwright install")
     print("Installation complete!")
-

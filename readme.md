@@ -4,7 +4,7 @@
 
 A test automation project using py playwright.
 
-## Installation
+## Installation (linux)
 
 ```bash
 # For pyproject.toml via uv
@@ -20,7 +20,9 @@ uv pip install -r requirements.txt
 ```
 
 ```bash
-invoke --list
+source .venv/bin/activate
+# invoke lib
+inv --list
 ```
 
 ### playwright

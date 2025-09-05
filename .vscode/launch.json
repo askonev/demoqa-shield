@@ -2,11 +2,15 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python Debugger: Current File",
+            "name": "pytest",
             "type": "debugpy",
             "request": "launch",
-            "program": "${file}",
-            "console": "integratedTerminal"
+            "module": "pytest", // Запускаем pytest как модуль
+            "args": [
+                "${file}" // Передаем текущий файл как аргумент
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false // Позволяет отладчику заходить в код сторонних библиотек
         }
     ]
 }
