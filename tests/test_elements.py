@@ -1,10 +1,20 @@
 import pytest
 from playwright.sync_api import Page
-from lib.ui.elements_page import ElementPage
+
+from lib.ui.home_page import HomePage
+from lib.ui.home_page_components.elements_page import ElementsPage
 
 
-@pytest.mark.parametrize("url", ["https://demoqa.com/elements"])
-def test_page_headers_is_correct(page: Page, url: str):
-    elements_page = ElementPage(page)
-    elements_page.goto(url)
-    assert elements_page.get_title() == "DEMOQA"
+@pytest.fixture
+def home(page: Page) -> HomePage:
+    return HomePage(page)
+
+
+@pytest.fixture
+def elements(home: HomePage) -> ElementsPage:
+    home.goto()
+    return home.goto_elements_page()
+
+
+def test_elements_page_title_is_correct(elements: ElementsPage):
+    assert elements.get_title() == "DEMOQA"
