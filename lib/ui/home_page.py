@@ -1,6 +1,6 @@
 from playwright.sync_api import Page
 
-from lib.ui.home_page_components.elements_page import ElementsPage
+from lib.ui.home_page_cmps.elements_page import ElementsPage
 
 
 class HomePage:
