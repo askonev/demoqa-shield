@@ -2,7 +2,7 @@ import pytest
 from playwright.sync_api import Page
 
 from lib.ui.home_page import HomePage
-from lib.ui.home_page_components.elements_page import ElementsPage
+from lib.ui.home_page_cmps.elements_page import ElementsPage
 
 
 @pytest.fixture
@@ -18,3 +18,9 @@ def elements(home: HomePage) -> ElementsPage:
 
 def test_elements_page_title_is_correct(elements: ElementsPage):
     assert elements.get_title() == "DEMOQA"
+
+
+def test_text_box_submission(elements: ElementsPage):
+    elements.dropdown_elements()
+    elements.goto_text_box()
+    print()
