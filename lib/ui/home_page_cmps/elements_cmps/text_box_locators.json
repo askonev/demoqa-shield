@@ -1,0 +1,6 @@
+{
+    "Full Name": "//div[@id='userName-wrapper']/div/input",
+    "Email": "//div[@id='userEmail-wrapper']/div/input",
+    "Current Address": "//div[@id='currentAddress-wrapper']/div/textarea",
+    "Permanent Address": "//div[@id='permanentAddress-wrapper']/div/textarea"
+}

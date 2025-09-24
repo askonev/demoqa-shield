@@ -14,7 +14,7 @@ class ElementsPage:
     def get_title(self) -> str:
         return self.page.title()
 
-    def dropdown_elements(self):
+    def dropdown_elements_click(self):
         self.dropdown_elements.click()
 
     def goto_text_box(self) -> TextBox:
