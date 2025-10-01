@@ -17,10 +17,12 @@ def elements(home: HomePage) -> ElementsPage:
     return home.goto_elements_page()
 
 
+@pytest.mark.e2e
 def test_elements_page_title_is_correct(elements: ElementsPage):
     assert elements.get_title() == "DEMOQA"
 
 
+@pytest.mark.e2e
 def test_text_box_submission(elements: ElementsPage):
     elements.dropdown_elements_click()
     text_box = elements.goto_text_box()
