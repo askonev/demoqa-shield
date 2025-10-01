@@ -1,4 +1,3 @@
-# tasks.py
 from invoke import task
 
 
@@ -23,12 +22,28 @@ def pw_install(c):
 @task
 def benchmark(c):
     print("headed start")
-    c.run('/usr/bin/time -f "%e" pytest ./tests/test_elements.py \
-         > /dev/null')
+    c.run(
+        '/usr/bin/time -f "%e" pytest ./tests/test_elements.py \
+         > /dev/null'
+    )
 
 
 @task
 def benchmark_headless(c):
     print("headless start")
-    c.run("/usr/bin/time -f \"%e\" pytest -c pytest.headless.ini \
-         ./tests/test_elements.py > /dev/null")
+    c.run(
+        '/usr/bin/time -f "%e" pytest -c pytest.headless.ini \
+         ./tests/test_elements.py > /dev/null'
+    )
+
+
+@task
+def coverage(c):
+    print("Running tests with coverage...")
+    c.run("coverage run -m pytest")
+
+
+@task(coverage)
+def coverage_report(c):
+    print("coverage running")
+    c.run("coverage html")

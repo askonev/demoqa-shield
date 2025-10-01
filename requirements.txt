@@ -6,6 +6,10 @@ certifi==2025.8.3
     # via requests
 charset-normalizer==3.4.3
     # via requests
+coverage==7.10.7
+    # via demoqa-shield (pyproject.toml)
+faker==37.8.0
+    # via demoqa-shield (pyproject.toml)
 greenlet==3.2.4
     # via playwright
 idna==3.10
@@ -60,6 +64,8 @@ typing-extensions==4.15.0
     #   typing-inspection
 typing-inspection==0.4.1
     # via pydantic
+tzdata==2025.2
+    # via faker
 urllib3==2.5.0
     # via
     #   requests

@@ -10,7 +10,9 @@ dependencies = [
     "responses",
     "invoke",
     "pydantic",
-    "pytest-playwright"
+    "pytest-playwright",
+    "faker",
+    "coverage"
 ]
 
 
