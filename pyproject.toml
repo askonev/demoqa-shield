@@ -12,6 +12,7 @@ dependencies = [
     "pydantic",
     "pytest-playwright",
     "faker",
+    "coverage"
 ]
 
 
