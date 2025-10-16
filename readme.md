@@ -22,7 +22,7 @@ uv pip install -r requirements.txt
 ```bash
 source .venv/bin/activate
 # invoke lib
-inv --list
+inv list
 ```
 
 ### playwright
