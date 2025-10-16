@@ -2,6 +2,11 @@ from invoke import task
 
 
 @task
+def list(c):
+    c.run("invoke --list")
+
+
+@task
 def install(c):
     """Install dependencies from requirements.txt."""
     print("Compile requirements.txt...")
@@ -22,18 +27,14 @@ def pw_install(c):
 @task
 def benchmark(c):
     print("headed start")
-    c.run(
-        '/usr/bin/time -f "%e" pytest ./tests/test_elements.py \
-         > /dev/null'
-    )
+    c.run('/usr/bin/time -f "%e" pytest ./tests/test_elements.py > /dev/null')
 
 
 @task
 def benchmark_headless(c):
     print("headless start")
     c.run(
-        '/usr/bin/time -f "%e" pytest -c pytest.headless.ini \
-         ./tests/test_elements.py > /dev/null'
+        '/usr/bin/time -f "%e" pytest -c pytest.headless.ini ./tests/test_elements.py > /dev/null'
     )
 
 
