@@ -1,6 +1,6 @@
 import pytest
 from faker import Faker
-from playwright.sync_api import Page
+from playwright.sync_api import Page, expect
 
 from lib.ui.home_page import HomePage
 from lib.ui.home_page_cmps.elements_page import ElementsPage
@@ -40,3 +40,11 @@ def test_text_box_submission(elements: ElementsPage):
     text_box.submit.click()
     result = text_box.result_text()
     assert "Name:" + data["Full Name"] == result
+
+
+@pytest.mark.e2e
+def test_check_box_selected_all(elements: ElementsPage):
+    check_box = elements.dropdown_elements_click().goto_check_box()
+    expect(
+        check_box.tree.expand_all().activate_checkbox_by_text("Commands").l_result
+    ).to_have_text("You have selected :commands")
