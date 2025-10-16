@@ -27,14 +27,14 @@ def pw_install(c):
 @task
 def benchmark(c):
     print("headed start")
-    c.run('/usr/bin/time -f "%e" pytest ./tests/test_elements.py > /dev/null')
+    c.run('/usr/bin/time -f "%e" pytest ./tests/functional/test_elements.py > /dev/null')
 
 
 @task
 def benchmark_headless(c):
     print("headless start")
     c.run(
-        '/usr/bin/time -f "%e" pytest -c pytest.headless.ini ./tests/test_elements.py > /dev/null'
+        '/usr/bin/time -f "%e" pytest -c pytest.headless.ini ./tests/functional/test_elements.py > /dev/null'
     )
 
 
